@@ -98,7 +98,7 @@ def tabela_assuntos(df):
                 <style>
                     th, td {
                         border-top: none;
-                        padding: 0px;  /* Adjust padding for better visual appearance */
+                        padding: 10px;  /* Adjust padding for better visual appearance */
                         text-align: center;  /* Center align text */
                         height: 80px; 
                         vertical-align: middle;
