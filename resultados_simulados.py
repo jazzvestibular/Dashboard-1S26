@@ -289,15 +289,15 @@ def tabela_questoes(df):
                         vertical-align: middle;
                     }
                 </style>
-                <table style="border-collapse: collapse; margin-top: 10px; margin-bottom: -32px;">
+                <table style="border-collapse: collapse; margin-top: 10px; margin-bottom: -16px;">
                     <thead>
                         <tr style="background-color: rgba(158, 8, 158, 0.8); color: white; font-weight: bold;">
-                            <th style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-top-left-radius: 10px;border-right: 1px solid rgba(158, 8, 158, 0.8);border-left: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Questão</th>
-                            <th style="width: 250px; min-width: 250px; max-width: 250px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Área do conhecimento</th>
-                            <th style="width: 350px; min-width: 350px; max-width: 350px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Assunto</th>
-                            <th style="width: 150px; min-width: 150px; max-width: 150px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Seu resultado</th>
-                            <th style="width: 150px; min-width: 150px; max-width: 150px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Média geral</th>
-                            <th style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-top-right-radius: 10px;border-right: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8)">Gabarito</th>
+                            <th style="width: 125px; min-width: 125px; max-width: 125px; text-align: center; border-top-left-radius: 10px;border-right: 1px solid rgba(158, 8, 158, 0.8);border-left: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Questão</th>
+                            <th style="width: 225px; min-width: 225px; max-width: 225px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Área do conhecimento</th>
+                            <th style="width: 325px; min-width: 325px; max-width: 325px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Assunto</th>
+                            <th style="width: 125px; min-width: 125px; max-width: 125px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Seu resultado</th>
+                            <th style="width: 125px; min-width: 125px; max-width: 125px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Média geral</th>
+                            <th style="width: 125px; min-width: 125px; max-width: 125px; text-align: center; border-top-right-radius: 10px;border-right: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8)">Gabarito</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -325,12 +325,12 @@ def tabela_questoes(df):
 
             st.markdown(f"""
             <tr style="text-align: center; background-color: {background_color};">
-                <td style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Número da questão']}</td>
-                <td style="width: 250px; min-width: 250px; max-width: 250px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Área do conhecimento']}</td>
-                <td style="width: 350px; min-width: 350px; max-width: 350px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Assunto']}</td>
-                <td style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Resultado Individual']}</td>
-                <td style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Resultado Geral']}</td>
-                <td style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Gabarito']}</td>
+                <td style="width: 125px; min-width: 125px; max-width: 125px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Número da questão']}</td>
+                <td style="width: 225px; min-width: 225px; max-width: 225px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Área do conhecimento']}</td>
+                <td style="width: 325px; min-width: 325px; max-width: 325px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Assunto']}</td>
+                <td style="width: 125px; min-width: 125px; max-width: 125px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Resultado Individual']}</td>
+                <td style="width: 125px; min-width: 125px; max-width: 125px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Resultado Geral']}</td>
+                <td style="width: 125px; min-width: 125px; max-width: 125px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Gabarito']}</td>
             </tr>
             """, unsafe_allow_html=True)
     else:
