@@ -98,13 +98,13 @@ def tabela_assuntos(df):
                 <style>
                     th, td {
                         border-top: none;
-                        padding: 10px;  /* Adjust padding for better visual appearance */
+                        padding: 0px;  /* Adjust padding for better visual appearance */
                         text-align: center;  /* Center align text */
                         height: 80px; 
                         vertical-align: middle;
                     }
                 </style>
-                <table style="border-collapse: collapse; margin-top: 10px; margin-bottom: -32px;">
+                <table style="border-collapse: collapse; margin-top: 10px; margin-bottom: 0px;">
                     <thead>
                         <tr style="background-color: rgba(158, 8, 158, 0.8); color: white; font-weight: bold;">
                             <th style="width: 280px; min-width: 280px; max-width: 280px; text-align: center; border-top-left-radius: 10px;border-right: 1px solid rgba(158, 8, 158, 0.8);border-left: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Assunto</th>
