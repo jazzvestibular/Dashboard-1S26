@@ -109,7 +109,7 @@ def mostrar_formulario_login():
     entrar_button = col5.button('Entrar', key='b20')
     ChangeButtonColour('Entrar', 'white', '#9E089E')
 
-    tabela_usuarios = ler_planilha("1ddv-J2gk6r3rH_djTunhedsMpMuP3_hPLB6GbYvvRic", "Streamlit | Usuarios!A1:G1000")
+    tabela_usuarios = ler_planilha("1-Nw5qxTF-GZFEkoZRKH70Xl0uRTP2gRwyRtjiJH8Pes", "Streamlit | Usuarios!A1:G1000")
     lista_emails = tabela_usuarios["Email"].tolist()
     #st.write(lista_emails)
 
