@@ -1261,7 +1261,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
         resultados_gerais3['Classificação'] = resultados_gerais3['Acerto'].rank(method='min', ascending=False).astype(int)
 
         resultados_gerais_aluno1 = resultados_gerais3[resultados_gerais3['Nome do aluno(a)'] == nome_aluno3['Nome do aluno(a)'][0]]
-
+        st.dataframe(resultados_gerais_aluno1)
         if resultados_gerais_aluno1['Acerto'].sum() > 0:
 
             #if permissao != 'Inscrito Simulado Nacional':
