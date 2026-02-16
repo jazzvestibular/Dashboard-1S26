@@ -951,7 +951,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         if (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
-            simulados = ["Escolha o simulado"] + ['Simulado Insper 01']# + ['Simulado FGV 01'] + ['Simulado Insper 02'] + ['Simulado FGV 02']# + ['Simulado Insper 03'] + ['Simulado FGV 03'] + ['Simulado Insper 04'] + ['Simulado FGV 04'] + ['Simulado Insper 05'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado Insper 07'] + ['Simulado FGV 06'] + ['Simulado Insper 08'] #+ ['Simulado FGV 01'] + ['Simulado FGV 02'] + ['Simulado FGV 03'] + ['Simulado FGV 04'] + ['Simulado FGV 05'] + ['Simulado FGV 06']
+            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01']# + ['Simulado Insper 02'] + ['Simulado FGV 02']# + ['Simulado Insper 03'] + ['Simulado FGV 03'] + ['Simulado Insper 04'] + ['Simulado FGV 04'] + ['Simulado Insper 05'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado Insper 07'] + ['Simulado FGV 06'] + ['Simulado Insper 08'] #+ ['Simulado FGV 01'] + ['Simulado FGV 02'] + ['Simulado FGV 03'] + ['Simulado FGV 04'] + ['Simulado FGV 05'] + ['Simulado FGV 06']
 
         elif (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online'):
 
