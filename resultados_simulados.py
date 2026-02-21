@@ -951,7 +951,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         if (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
-            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01']# + ['Simulado Insper 02'] + ['Simulado FGV 02']# + ['Simulado Insper 03'] + ['Simulado FGV 03'] + ['Simulado Insper 04'] + ['Simulado FGV 04'] + ['Simulado Insper 05'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado Insper 07'] + ['Simulado FGV 06'] + ['Simulado Insper 08'] #+ ['Simulado FGV 01'] + ['Simulado FGV 02'] + ['Simulado FGV 03'] + ['Simulado FGV 04'] + ['Simulado FGV 05'] + ['Simulado FGV 06']
+            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01'] + ['Simulado Insper 02']# + ['Simulado FGV 02']# + ['Simulado Insper 03'] + ['Simulado FGV 03'] + ['Simulado Insper 04'] + ['Simulado FGV 04'] + ['Simulado Insper 05'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado Insper 07'] + ['Simulado FGV 06'] + ['Simulado Insper 08'] #+ ['Simulado FGV 01'] + ['Simulado FGV 02'] + ['Simulado FGV 03'] + ['Simulado FGV 04'] + ['Simulado FGV 05'] + ['Simulado FGV 06']
 
         elif (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online'):
 
@@ -2070,7 +2070,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
      
 
-            
+
             if (simulado_selecionado[:15] == 'Simulado Insper' or simulado_selecionado[:12] == 'Simulado FGV' or simulado_selecionado[:17] == 'Simulado Nacional'):
 
                 base_redacao['Acerto'] = 0.00
@@ -2079,9 +2079,14 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
                 base_redacao['Nota na questão'] = base_redacao['Nota na questão'].replace('', np.nan)
                 base_redacao['Valor da questão'] = base_redacao['Valor da questão'].replace('', np.nan)
 
-                base_redacao['Nota na questão'] = (
-                base_redacao['Nota na questão'].str.replace(',', '.', regex=False).astype(float)
+                base_redacao['Nota na questão'] = pd.to_numeric(
+                    base_redacao['Nota na questão'].astype(str).str.replace(',', '.'),
+                    errors='coerce'
                 )
+
+                #base_redacao['Nota na questão'] = (
+                #base_redacao['Nota na questão'].str.replace(',', '.', regex=False).astype(float)
+                #)
 
                 base_redacao['Valor da questão'] = (
                 base_redacao['Valor da questão'].str.replace(',', '.', regex=False).astype(float)
