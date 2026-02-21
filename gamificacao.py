@@ -183,7 +183,7 @@ def card_principal(pontuacao_aluno, pontuacao_media, nivel_aluno2):
             with col5:
                 st.write("")
 
-def definir_nivel(pontuacao, pont_nivel12, pont_nivel23, pont_nivel34, pont_nivel45, pont_nivel56, pont_nivel67):
+def definir_nivel(pontuacao, pont_nivel12, pont_nivel23, pont_nivel34, pont_nivel45):#, pont_nivel56, pont_nivel67):
     if pontuacao == 0:
         #return "Nível 1"
         return "1ª | Exploration"
@@ -192,22 +192,26 @@ def definir_nivel(pontuacao, pont_nivel12, pont_nivel23, pont_nivel34, pont_nive
         return "1ª | Exploration"
     elif pontuacao < pont_nivel23:
         #return "Nível 2"
-        return "2ª | Discovery"
+        #return "2ª | Discovery"
+        return "2ª | Action"
     elif pontuacao < pont_nivel34:
         #return "Nível 3"
-        return "3ª | Action"
+        #return "3ª | Action"
+        return "3ª | Confrontation"
     elif pontuacao < pont_nivel45:
         #return "Nível 4"
-        return "4ª | Confrontation"
+        #return "4ª | Confrontation"
+        return "4ª | Resilience"
     elif pontuacao < pont_nivel56:
         #return "Nível 5"
-        return "5ª | Resilience"
-    elif pontuacao < pont_nivel67:
+        #return "5ª | Resilience"
+        return "5ª | Final Battle"
+    #elif pontuacao < pont_nivel67:
         #return "Nível 6"
-        return "6ª | Experience"
-    else:
+        #return "6ª | Experience"
+    #else:
         #return "Nível 7"
-        return "7ª | Final Battle"
+    #    return "7ª | Final Battle"
 
 def progress_bar(progress, nivel_aluno, pontos_para_proximo_nivel, id_bar, pont_niveis_menor, pont_niveis_maior):
 
@@ -215,25 +219,34 @@ def progress_bar(progress, nivel_aluno, pontos_para_proximo_nivel, id_bar, pont_
 
     if id_bar == 1:
         atual =  "Exploration"
-        proximo = "Discovery"
-    elif id_bar == 2:
-        atual = "Discovery"
+        #proximo = "Discovery"
         proximo = "Action"
-    elif id_bar == 3:
+    elif id_bar == 2:
+        #atual = "Discovery"
         atual = "Action"
+        #proximo = "Action"
         proximo = "Confrontation"
-    elif id_bar == 4:
+    elif id_bar == 3:
+        #atual = "Action"
         atual = "Confrontation"
+        #proximo = "Confrontation"
         proximo = "Resilience"
-    elif id_bar == 5:
+    elif id_bar == 4:
+        #atual = "Confrontation"
         atual = "Resilience"
-        proximo = "Experience"
-    elif id_bar == 6:
-        atual = "Experience"
+        #proximo = "Resilience"
         proximo = "Final Battle"
-    elif id_bar == 7:
+    elif id_bar == 5:
+        #atual = "Resilience"
         atual = "Final Battle"
+        #proximo = "Experience"
         proximo = ""
+    #elif id_bar == 6:
+    #    atual = "Experience"
+    #    proximo = "Final Battle"
+    #elif id_bar == 7:
+    #    atual = "Final Battle"
+    #    proximo = ""
 
     with st.container():
 
@@ -304,7 +317,7 @@ def progress_bar(progress, nivel_aluno, pontos_para_proximo_nivel, id_bar, pont_
         
     elif progress == 0:
         
-        if nivel_aluno == 'Nível 1' and pont_niveis_maior == 400:
+        if nivel_aluno == 'Nível 1' and pont_niveis_maior == 1500:
 
             progress_bar_html_nivel = f"""
             <div style="width: 100%; background-color: #f0f2f6; border-radius: 8px;">
@@ -354,22 +367,6 @@ def progress_bar(progress, nivel_aluno, pontos_para_proximo_nivel, id_bar, pont_
         st.markdown(progress_bar_html_nivel, unsafe_allow_html=True)
 
         st.markdown(mensagem_html, unsafe_allow_html=True)
-
-        if proximo == 'Discovery':
-
-            html_br="""
-            <br>
-            """
-
-            #st.markdown(html_br, unsafe_allow_html=True)
-
-            mensagem_html_contato_breve = f"""
-            <div style="width: 100%; background-color: #ffffff; border-radius: 8px; padding: 10px;">
-                <p style="font-size: 16px; color: #333; margin: 0;">Entraremos em contato com você em breve!!</p>
-            </div>
-            """
-
-            #st.markdown(mensagem_html_contato_breve, unsafe_allow_html=True)
 
 def esferas_bar(esfera, pont_normalizado_aluno, pont_normalizado_media):
 
@@ -456,8 +453,8 @@ def tabela_pontuacoes(gamificacao, nome_selecionado):
                 <table style="border-collapse: collapse; margin-top: 10px; margin-bottom: -32px;">
                     <thead>
                         <tr style="background-color: rgba(158, 8, 158, 0.8); color: white; font-weight: bold;">
-                            <th style="width: 300px; min-width: 300px; max-width: 300px; text-align: center; border-top-left-radius: 10px;border-right: 1px solid rgba(158, 8, 158, 0.8);border-left: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Aluno(a)</th>
-                            <th style="width: 150px; min-width: 150px; max-width: 150px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Turma</th>
+                            <th style="width: 350px; min-width: 350px; max-width: 350px; text-align: center; border-top-left-radius: 10px;border-right: 1px solid rgba(158, 8, 158, 0.8);border-left: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Aluno(a)</th>
+                            <th style="width: 250px; min-width: 250px; max-width: 250px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Turma</th>
                             <th style="width: 150px; min-width: 150px; max-width: 150px; text-align: center;border-right: 1px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Fase</th>
                             <th style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-top-right-radius: 10px;border-right: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8)">Pontuação</th>
                         </tr>
@@ -477,8 +474,8 @@ def tabela_pontuacoes(gamificacao, nome_selecionado):
 
                 st.markdown(f"""
                     <tr style="text-align: center; background-color: {background_color}; color: {font_color};">
-                        <td style="width: 300px; min-width: 300px; max-width: 300px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Nome do aluno(a)']}</td>
-                        <td style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Turma']}</td>
+                        <td style="width: 350px; min-width: 350px; max-width: 350px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Nome do aluno(a)']}</td>
+                        <td style="width: 250px; min-width: 250px; max-width: 250px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Turma'].split()[-1]}</td>
                         <td style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Nível']}</td>
                         <td style="width: 150px; min-width: 150px; max-width: 150px; text-align: center; border-bottom: 1px solid #FFFFFF; padding: 10px; height: 40px; border-left: 1px solid white; border-right: 1px solid white;">{row['Pontuação selecionada']}</td>
                     </tr>
@@ -524,15 +521,6 @@ def grafico_pontuacao_semanal(gamificacao, nome_selecionado, esferas_selecionada
             marker_color=cores_esferas.get(esfera, 'gray')  # Define a cor ou usa cinza como padrão
         ))
 
-    # Adicionando a linha da média
-    #fig.add_trace(go.Scatter(
-    #    x=media_por_semana['Semana'],
-    #    y=media_por_semana['Pontuação'],
-    #    mode='lines+markers',
-    #    name='Média Geral',
-    #    line=dict(color='red', width=2),
-    #))
-
     # Atualizando layout
     fig.update_layout(
         #title='Pontuação por Semana',
@@ -546,8 +534,6 @@ def grafico_pontuacao_semanal(gamificacao, nome_selecionado, esferas_selecionada
             xanchor='center',
             x=0.5
         ),
-        #width=1000,  # Largura do gráfico (ajuste conforme necessário)
-        #height=500  # Altura do gráfico (ajuste conforme necessário)
     )
 
     st.plotly_chart(fig, use_container_width=True)  # O gráfico usará toda a largura do container
@@ -617,13 +603,13 @@ def mostrar_gamificacao(nome, permissao, email, turma):
     end_time = time.time()
     elapsed_time = end_time - start_time
 
-    presenca_aulasMT = ler_planilha("1fFEviZHHGitydSekY6w-ExSm6o5191aAW8vmd7IPg7I", "Streamlit | Presença nas aulas | Semi + Esparta 3º!A1:R")
+    presenca_aulasMT = ler_planilha("1fFEviZHHGitydSekY6w-ExSm6o5191aAW8vmd7IPg7I", "Streamlit | Presença nas aulas | Semiextensivo!A1:J")
 
     end_time = time.time()
     elapsed_time = end_time - start_time
     update_progress(10)
 
-    presenca_aulasE3 = ler_planilha("1EDQdQqTrwAWxjUKvXbiOYPFhvNnKFiaS8DGm6hAVvF4", "Streamlit | Presença nas aulas | Esparta 3º!A1:R")
+    presenca_aulasE3 = ler_planilha("1VfeN1DbiO0BV_jjYWtXOQWSfBu2Au2k7qlMTapjr768", "Streamlit | Presença nas aulas | Esparta 3º!A1:R")
     #presenca_aulasT2 = ler_planilha("1qV-TL1B26Xhrmg7w5JkO6RPRSlaD3Li3saeBRtQZJD0", "Streamlit | Presença nas aulas | Tarde 2!A1:R")
     #presenca_aulasT2 = ler_planilha("1rq83WLY5Wy6jZMtf54oB2wfhibq_6MywEcVV9SK60oI", "Streamlit | Presença nas aulas | Tarde 2!A1:R")
     
@@ -631,7 +617,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
     elapsed_time = end_time - start_time
     update_progress(20)
 
-    presenca_aulasE2N = ler_planilha("1bLUt5GVLDidmUnYN_ZbxdKQL5vsYeJep4lJDEoWayOk", "Streamlit | Presença nas aulas | Esparta 2º + Natureza!A1:R")
+    presenca_aulasE2N = ler_planilha("10DBLkmUknk1DYsEO4pnb-psEd9f_ezkmAV_9m2BwQd8", "Streamlit | Presença nas aulas | Esparta 2º!A1:R")
     #presenca_aulasNT1 = ler_planilha("10ocwUa69s-3c_FMpNMWq6CRooGooa0-9K19rFwm8oEo", "Streamlit | Presença nas aulas | Tarde 1 (Nat)!A1:R")
     #presenca_aulasNT1 = ler_planilha("1rq83WLY5Wy6jZMtf54oB2wfhibq_6MywEcVV9SK60oI", "Streamlit | Presença nas aulas | Tarde 1 (Nat)!A1:R")
 
@@ -639,7 +625,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
     elapsed_time = end_time - start_time
     update_progress(30)
 
-    engajamento_plataforma = ler_planilha("1GiTWn1ImitItvUh17HIdQ1afkA9TDFEExifCPDzvDSw", "Streamlit | Engajamento na plataforma!A1:J")
+    engajamento_plataforma = ler_planilha("1khfnHkkR3Vt2V5pezUtTWNDkj0iSailRO53sA-OqIXo", "Streamlit | Engajamento na plataforma!A1:J")
 
     end_time = time.time()
     elapsed_time = end_time - start_time
@@ -660,25 +646,23 @@ def mostrar_gamificacao(nome, permissao, email, turma):
     elapsed_time = end_time - start_time
     update_progress(60)
 
-    presenca_mentoria = ler_planilha("17fFiBQ17apu9p5WJLdFz5E11d41wrWyylUPVxC7jozE", "Streamlit | Presença na mentoria!A1:F")
+    presenca_mentoria = ler_planilha("1oUayWta_-gOU8Aej5EfuFA40z7mC7-kJRJjjA_KhDLE", "Streamlit | Presença na mentoria!A1:F")
 
     end_time = time.time()
     elapsed_time = end_time - start_time
     update_progress(70)
 
-    presenca_nota_simulado = ler_planilha("1-han5cwytzetPhBqd3AHvLrJsYW0eiwv5FwA5s8Pibo", "Streamlit | Presença + Notas simulado!A1:R")
+    presenca_nota_simulado = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Streamlit | Presença + Notas simulado!A1:R")
 
     end_time = time.time()
     elapsed_time = end_time - start_time
     update_progress(80)
 
-    duvidas_monitoria = ler_planilha("1nif344ZmxDUAeiV_DBHJEzLb5Ctavv9VYPz3r2DSxRs", "Streamlit | Monitoria!A1:O")
+    duvidas_monitoria = ler_planilha("1p-z50b9-sT0Evz6ZGDpjNB4nlqIoJgjGzky1WaloQIw", "Streamlit | Monitoria!A1:O")
     
     end_time = time.time()
     elapsed_time = end_time - start_time
     update_progress(90)
-    
-    presenca_aulas_2fase = ler_planilha("1da_mnC8ycK8DtITuektoBRg6ne-_GkAK8Imsn1vdrsc", "Streamlit | Presença nas aulas | 2ª fase!A1:G10000")
     
     engajamento_plataforma['Pontuação_Engajamento_Plataforma'] = engajamento_plataforma['Pontuação'].fillna(0).astype(int)
     presenca_aulas['Pontuação_Presença_Aulas'] = presenca_aulas['Pontuação'].fillna(0).astype(int)
@@ -687,30 +671,29 @@ def mostrar_gamificacao(nome, permissao, email, turma):
     presenca_nota_simulado['Pontuação_Presença_Simulado'] = presenca_nota_simulado['Pontuação Presença'].fillna(0).astype(int)
     presenca_nota_simulado['Pontuação_Nota_Simulado'] = presenca_nota_simulado['Pontuação Nota'].fillna(0).astype(int)
     duvidas_monitoria['Pontuação_Duvidas_Monitoria'] = duvidas_monitoria['Pontuação'].fillna(0).astype(int)
-    presenca_aulas_2fase['Pontuação_Presença_2Fase'] = presenca_aulas_2fase['Pontuação'].fillna(0).astype(int)
-    
+
     #engajamento_plataforma = engajamento_plataforma[engajamento_plataforma['Pontuação_Engajamento_Plataforma'] > 0]
     engajamento_plataforma['Data de conclusão'] = pd.to_datetime(engajamento_plataforma['Data de conclusão'], format='%d/%m/%Y %H:%M:%S', errors='coerce')
     engajamento_plataforma['Semana'] = engajamento_plataforma['Data de conclusão'].apply(lambda x: x.isocalendar()[1] if pd.notnull(x) else None)
-    engajamento_plataforma['Semana'] = engajamento_plataforma['Semana'] - 31 ## Ajuste
+    
+    engajamento_plataforma['Semana'] = engajamento_plataforma['Semana'] - 5 ## Ajuste
+
     presenca_aulas['Data de conclusão'] = pd.to_datetime(presenca_aulas['Data'], format='%d/%m/%Y', errors='coerce')
     presenca_aulas['Semana'] = presenca_aulas['Data de conclusão'].apply(lambda x: x.isocalendar()[1] if pd.notnull(x) else None)
-    presenca_aulas['Semana'] = presenca_aulas['Semana'] - 31 ## Ajuste
+    presenca_aulas['Semana'] = presenca_aulas['Semana'] - 5 ## Ajuste
     presenca_mentoria['Data de conclusão'] = pd.to_datetime(presenca_mentoria['Data'], format='%d/%m/%Y', errors='coerce')
     presenca_mentoria['Semana'] = presenca_mentoria['Data de conclusão'].apply(lambda x: x.isocalendar()[1] if pd.notnull(x) else None)
-    presenca_mentoria['Semana'] = presenca_mentoria['Semana'] - 31 ## Ajuste
+    presenca_mentoria['Semana'] = presenca_mentoria['Semana'] - 5## Ajuste
     #presenca_nota_simulado = presenca_nota_simulado[presenca_nota_simulado['Pontuação_Presença_Simulado'] > 0]
     presenca_nota_simulado['Data de conclusão'] = presenca_nota_simulado['Data de conclusão'].str.replace(r'\s+', ' ', regex=True).str.strip()
     presenca_nota_simulado['Data de conclusão 2'] = pd.to_datetime(presenca_nota_simulado['Data de conclusão'], errors='coerce',infer_datetime_format=True)
     presenca_nota_simulado['Semana'] = presenca_nota_simulado['Data de conclusão 2'].apply(lambda x: x.isocalendar()[1] if pd.notnull(x) and x != '' else None)
-    presenca_nota_simulado['Semana'] = presenca_nota_simulado['Semana'] - 31 ## Ajuste
+    presenca_nota_simulado['Semana'] = presenca_nota_simulado['Semana'] - 5 ## Ajuste
     duvidas_monitoria['Data de conclusão'] = duvidas_monitoria['Data'].str.replace(r', às', ' ', regex=True).str.strip()
     duvidas_monitoria['Data de conclusão'] = pd.to_datetime(duvidas_monitoria['Data de conclusão'], format='%d/%m/%Y %H:%M:%S',errors='coerce')
     duvidas_monitoria['Semana'] = duvidas_monitoria['Data de conclusão'].apply(lambda x: x.isocalendar()[1] if pd.notnull(x) else None)
-    duvidas_monitoria['Semana'] = duvidas_monitoria['Semana'] - 31
-    presenca_aulas_2fase['Data de conclusão'] = pd.to_datetime(presenca_aulas_2fase['Data'], format='%d/%m/%Y', errors='coerce')
-    presenca_aulas_2fase['Semana'] = presenca_aulas_2fase['Data de conclusão'].apply(lambda x: x.isocalendar()[1] if pd.notnull(x) else None)
-    presenca_aulas_2fase['Semana'] = presenca_aulas_2fase['Semana'] - 31 ## Ajuste
+    duvidas_monitoria['Semana'] = duvidas_monitoria['Semana'] - 5
+
     engajamento_plataforma_semana = engajamento_plataforma.groupby(['Nome do aluno(a)', 'Turma','Semana']).agg({'Pontuação_Engajamento_Plataforma': 'sum'}).reset_index()
     engajamento_plataforma_semana['Esfera'] = 'Engajamento na plataforma'
     engajamento_plataforma_semana.rename(columns = {'Pontuação_Engajamento_Plataforma':'Pontuação'}, inplace = True)
@@ -727,14 +710,12 @@ def mostrar_gamificacao(nome, permissao, email, turma):
     presenca_simulado_semana ['Esfera'] = 'Presença nos simulados'
     nota_simulado_semana.rename(columns = {'Pontuação_Nota_Simulado':'Pontuação'}, inplace = True)
     presenca_simulado_semana.rename(columns = {'Pontuação_Presença_Simulado':'Pontuação'}, inplace = True)
+
     duvidas_monitoria_semana = duvidas_monitoria.groupby(['Nome do aluno(a)','Turma','Semana']).agg({'Pontuação_Duvidas_Monitoria': 'sum'}).reset_index()
     duvidas_monitoria_semana['Esfera'] = 'Dúvidas na monitoria'
     duvidas_monitoria_semana.rename(columns = {'Pontuação_Duvidas_Monitoria':'Pontuação'}, inplace = True)
-    presenca_aulas_2fase_semana = presenca_aulas_2fase.groupby(['Nome do aluno(a)','Turma','Semana']).agg({'Pontuação_Presença_2Fase': 'sum'}).reset_index()
-    presenca_aulas_2fase_semana['Esfera'] = 'Presença nas aulas de 2ª fase'
-    presenca_aulas_2fase_semana.rename(columns = {'Pontuação_Presença_2Fase':'Pontuação'}, inplace = True)
 
-    gamificacao_semana1 = pd.concat([presenca_aulas_semana, presenca_aulas_2fase_semana], axis=0)
+    gamificacao_semana1 = presenca_aulas_semana
     gamificacao_semana2 = pd.concat([gamificacao_semana1, presenca_mentoria_semana], axis=0)
     gamificacao_semana3 = pd.concat([gamificacao_semana2, presenca_simulado_semana], axis=0)
     gamificacao_semana4 = pd.concat([gamificacao_semana3, nota_simulado_semana], axis=0)
@@ -745,7 +726,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
 
     data_to_write0 = [gamificacao_semana6.columns.tolist()] + gamificacao_semana6.values.tolist()  # Inclui cabeçalhos
 
-    escrever_planilha_pontos("1U5afhbKyxWuIUSh4-ZyLY5gpZullJOreuKvxsIfWUt0", data_to_write0, "Pontuação Semanal")
+    escrever_planilha_pontos("1o8qG4r9tvFnXTzKIxDt6EVxDEPQQLJdkldYtm5jOChE", data_to_write0, "Pontuação Semanal")
     
     #engajamento_plataforma2 = engajamento_plataforma.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
     engajamento_plataforma2 = engajamento_plataforma.groupby(['Nome do aluno(a)', 'Turma']).agg({'Pontuação_Engajamento_Plataforma': 'sum'}).reset_index()
@@ -758,8 +739,6 @@ def mostrar_gamificacao(nome, permissao, email, turma):
     #duvidas_monitoria2 = duvidas_monitoria.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
     duvidas_monitoria2 = duvidas_monitoria.groupby(['Nome do aluno(a)','Turma']).agg({'Pontuação_Duvidas_Monitoria': 'sum'}).reset_index()
 
-    presenca_aulas_2fase2 = presenca_aulas_2fase.groupby(['Nome do aluno(a)','Turma']).agg({'Pontuação_Presença_2Fase': 'sum'}).reset_index()
-
     if nome_selecionado == 'Escolha o(a) aluno(a)':
 
         end_time = time.time()
@@ -768,26 +747,12 @@ def mostrar_gamificacao(nome, permissao, email, turma):
 
     if nome_selecionado != "Escolha o(a) aluno(a)":
 
-        #engajamento_plataforma_aluno = engajamento_plataforma[engajamento_plataforma['Nome do aluno(a)'] == nome_selecionado]
-        #presenca_aulas_aluno = presenca_aulas[presenca_aulas['Nome do aluno(a)'] == nome_selecionado]
-        #presenca_mentoria_aluno = presenca_mentoria[presenca_mentoria['Nome do aluno(a)'] == nome_selecionado]
-        #presenca_nota_simulado_aluno = presenca_nota_simulado[presenca_nota_simulado['Nome do aluno(a)'] == nome_selecionado]
-        #duvidas_monitoria_aluno = duvidas_monitoria[duvidas_monitoria['Nome do aluno(a)'] == nome_selecionado]
-        #presenca_aulas_2fase_aluno = presenca_aulas_2fase[presenca_aulas_2fase['Nome do aluno(a)'] == nome_selecionado]
-
-        #engajamento_plataforma_aluno2 = engajamento_plataforma_aluno.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
-        #presenca_aulas_aluno2 = presenca_aulas_aluno.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
-        #presenca_mentoria_aluno2 = presenca_mentoria_aluno.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
-        #presenca_nota_simulado_aluno2 = presenca_nota_simulado_aluno.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
-        #duvidas_monitoria_aluno2 = duvidas_monitoria_aluno.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
-        #presenca_aulas_2fase_aluno2 = presenca_aulas_2fase_aluno.groupby(['Nome do aluno(a)','Turma']).sum().reset_index()
-
         gamificacao = pd.merge(alunos, presenca_aulas2, on = ['Nome do aluno(a)','Turma'], how = 'left')
         gamificacao1 = pd.merge(gamificacao, engajamento_plataforma2, on = ['Nome do aluno(a)','Turma'], how = 'left')
         gamificacao2 = pd.merge(gamificacao1, presenca_mentoria2, on = ['Nome do aluno(a)','Turma'], how = 'left')
         gamificacao4 = pd.merge(gamificacao2, presenca_nota_simulado2, on = ['Nome do aluno(a)','Turma'], how = 'left')
-        gamificacao4 = pd.merge(gamificacao4, presenca_aulas_2fase2, on = ['Nome do aluno(a)','Turma'], how = 'left')
         gamificacao_final = pd.merge(gamificacao4, duvidas_monitoria2, on = ['Nome do aluno(a)','Turma'], how = 'left')
+
         gamificacao_final.fillna(0, inplace=True)
 
         gamificacao_final['Pontuação_Engajamento_Plataforma'] = gamificacao_final['Pontuação_Engajamento_Plataforma'].astype(int)
@@ -796,7 +761,6 @@ def mostrar_gamificacao(nome, permissao, email, turma):
         gamificacao_final['Pontuação_Presença_Simulado'] = gamificacao_final['Pontuação_Presença_Simulado'].astype(int)
         gamificacao_final['Pontuação_Nota_Simulado'] = gamificacao_final['Pontuação_Nota_Simulado'].astype(int)
         gamificacao_final['Pontuação_Duvidas_Monitoria'] = gamificacao_final['Pontuação_Duvidas_Monitoria'].astype(int)
-        gamificacao_final['Pontuação_Presença_2Fase'] = gamificacao_final['Pontuação_Presença_2Fase'].astype(int)
 
         gamificacao_final['Pontuação'] = (
                 gamificacao_final['Pontuação_Engajamento_Plataforma'] +
@@ -804,14 +768,9 @@ def mostrar_gamificacao(nome, permissao, email, turma):
                 gamificacao_final['Pontuação_Presença_Mentoria'] + 
                 gamificacao_final['Pontuação_Presença_Simulado'] + 
                 gamificacao_final['Pontuação_Nota_Simulado'] +
-                gamificacao_final['Pontuação_Duvidas_Monitoria'] +
-                gamificacao_final['Pontuação_Presença_2Fase']
+                gamificacao_final['Pontuação_Duvidas_Monitoria']
             )
         
-        #gamificacao_final['Pontuação_Engajamento_Plataforma_Normalizada'] = gamificacao_final['Pontuação_Engajamento_Plataforma'] / gamificacao_final['Pontuação_Engajamento_Plataforma'].max()
-        #gamificacao_final['Pontuação_Presença_Aulas_Normalizada'] = (gamificacao_final['Pontuação_Presença_Aulas'] + gamificacao_final['Pontuação_Presença_2Fase'])  / (gamificacao_final['Pontuação_Presença_Aulas'].max() + gamificacao_final['Pontuação_Presença_2Fase'].max())
-        #gamificacao2['Pontuação_Presença_Mentoria_Normalizada'] = gamificacao2['Pontuação_Presença_Mentoria'] / gamificacao2['Pontuação_Presença_Mentoria'].max()    
-
         gamificacao_final['Pontuação_Engajamento_Plataforma_Normalizada'] = np.where(
             gamificacao_final['Pontuação_Engajamento_Plataforma'].max() == 0, 
             0, 
@@ -853,28 +812,29 @@ def mostrar_gamificacao(nome, permissao, email, turma):
         #gamificacao3 = gamificacao3[gamificacao3['Pontuação'] >= 0]
 
         #pont_niveis = [400, 1000, 1900, 2800, 3700, 5000]
-        if turmas == 'Extensivo':
+        if turmas == 'Semiextensivo':
             #pont_niveis = [600, 1300, 2200, 3200, 4300, 5600]
-            pont_niveis = [600, 1300, 2200, 3400, 4700, 7200]
+            pont_niveis = [1500,3000, 4500, 6000]
         if (turmas == 'Esparta 2º' or turmas == 'Esparta 3º' or turmas == 'Esparta'):
-            pont_niveis = [400, 800, 1300, 2000, 2600, 3400]
+            pont_niveis = [1500,3000, 4500, 6000]
 
-        gamificacao3['Nível'] = gamificacao3['Pontuação'].apply(definir_nivel, args=(pont_niveis[0], pont_niveis[1], pont_niveis[2], pont_niveis[3], pont_niveis[4], pont_niveis[5]))
+        gamificacao3['Nível'] = gamificacao3['Pontuação'].apply(definir_nivel, args=(pont_niveis[0], pont_niveis[1], pont_niveis[2], pont_niveis[3]))#, pont_niveis[4], pont_niveis[5]))
 
         data_to_write = [gamificacao3.columns.tolist()] + gamificacao3.values.tolist()  # Inclui cabeçalhos
 
-        if turmas == 'Extensivo':
+        if turmas == 'Semiextensivo':
 
-            escrever_planilha_pontos("1U5afhbKyxWuIUSh4-ZyLY5gpZullJOreuKvxsIfWUt0", data_to_write, "Pontuação Extensivo")
+            escrever_planilha_pontos("1o8qG4r9tvFnXTzKIxDt6EVxDEPQQLJdkldYtm5jOChE", data_to_write, "Pontuação Semiextensivo")
+            st.write('entrei')
 
         if turmas == 'Esparta':
 
-            escrever_planilha_pontos("1U5afhbKyxWuIUSh4-ZyLY5gpZullJOreuKvxsIfWUt0", data_to_write, "Pontuação Esparta")
+            escrever_planilha_pontos("1o8qG4r9tvFnXTzKIxDt6EVxDEPQQLJdkldYtm5jOChE", data_to_write, "Pontuação Esparta")
 
         gamificacao3_aluno = gamificacao3[gamificacao3['Nome do aluno(a)'] == nome_selecionado].reset_index(drop = True)
 
         #gamificacao3_medias = gamificacao3.drop(columns=['Nome do aluno(a)', 'Turma']).mean().reset_index()
-        gamificacao3_medias = gamificacao3.drop(columns=['Nome do aluno(a)', 'Turma']).agg({'Pontuação_Engajamento_Plataforma': 'mean','Pontuação_Presença_Aulas': 'mean','Pontuação_Presença_Simulado': 'mean','Pontuação_Nota_Simulado': 'mean','Pontuação_Duvidas_Monitoria': 'mean','Pontuação_Presença_2Fase': 'mean'}).reset_index()
+        gamificacao3_medias = gamificacao3.drop(columns=['Nome do aluno(a)', 'Turma']).agg({'Pontuação_Engajamento_Plataforma': 'mean','Pontuação_Presença_Aulas': 'mean','Pontuação_Presença_Simulado': 'mean','Pontuação_Nota_Simulado': 'mean','Pontuação_Duvidas_Monitoria': 'mean'}).reset_index()
         
         gamificacao3_medias.columns = ['Métrica', 'Média']
 
@@ -946,7 +906,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
 
                 if esferas_selecionadas_str != '':
                     data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "Esferas Gráfico " + esferas_selecionadas_str, nome_selecionado, email]]
-                    escrever_planilha("1BFEw2OJ6wP_mULNBTHi13Rc-4LDBgscUIKiTKwVmQxU", data_to_write, "Logs | 2S25")
+                    escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
 
                 grafico_pontuacao_semanal(gamificacao_semana6, nome_selecionado, esferas_selecionadas)
 
@@ -980,11 +940,12 @@ def mostrar_gamificacao(nome, permissao, email, turma):
             #st.markdown(html_br, unsafe_allow_html=True)
             progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 4, pont_niveis[2], pont_niveis[3])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
 
-        if nivel_aluno == '2ª | Discovery':   
+        #if nivel_aluno == '2ª | Discovery':  
+        if nivel_aluno == '2ª | Action':  
 
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 1, 0, pont_niveis[0])
             #st.markdown(html_br, unsafe_allow_html=True)
@@ -995,11 +956,12 @@ def mostrar_gamificacao(nome, permissao, email, turma):
             #st.markdown(html_br, unsafe_allow_html=True)
             progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 4, pont_niveis[2], pont_niveis[3])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
 
-        if nivel_aluno == '3ª | Action':   
+        #if nivel_aluno == '3ª | Action':   
+        if nivel_aluno == '3ª | Confrontation': 
 
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 1, 0, pont_niveis[0])
             #st.markdown(html_br, unsafe_allow_html=True)
@@ -1010,11 +972,12 @@ def mostrar_gamificacao(nome, permissao, email, turma):
             #st.markdown(html_br, unsafe_allow_html=True)
             progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 4, pont_niveis[2], pont_niveis[3])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
 
-        if nivel_aluno == '4ª | Confrontation':   
+        #if nivel_aluno == '4ª | Confrontation':   
+        if nivel_aluno == '4ª | Resilience':
 
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 1, 0, pont_niveis[0])
             #st.markdown(html_br, unsafe_allow_html=True)
@@ -1025,11 +988,12 @@ def mostrar_gamificacao(nome, permissao, email, turma):
             progress = (pontuacao_aluno - pont_niveis[2])  / (pont_niveis[3] - pont_niveis[2])
             progress_bar(progress, nivel_aluno, pontos_para_proximo_nivel, 4, pont_niveis[2], pont_niveis[3])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
             #st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
 
-        if nivel_aluno == '5ª | Resilience':   
+        #if nivel_aluno == '5ª | Resilience': 
+        if nivel_aluno == '5ª | Final Battle':  
 
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 1, 0, pont_niveis[0])
             st.markdown(html_br, unsafe_allow_html=True)
@@ -1040,10 +1004,10 @@ def mostrar_gamificacao(nome, permissao, email, turma):
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 4, pont_niveis[2], pont_niveis[3])
             st.markdown(html_br, unsafe_allow_html=True)
             progress = (pontuacao_aluno - pont_niveis[3])  / (pont_niveis[4] - pont_niveis[3])
-            progress_bar(progress, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
-            st.markdown(html_br, unsafe_allow_html=True)
-            progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
-
+            #progress_bar(progress, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
+            #st.markdown(html_br, unsafe_allow_html=True)
+            #progress_bar(0, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
+        '''
         if nivel_aluno == '6ª | Experience':   
 
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 1, 0, pont_niveis[0])
@@ -1072,7 +1036,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 5, pont_niveis[3], pont_niveis[4])
             st.markdown(html_br, unsafe_allow_html=True)
             progress_bar(1, nivel_aluno, pontos_para_proximo_nivel, 6, pont_niveis[4], pont_niveis[5])
-
+        '''
         st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)
 
         st.markdown(
@@ -1215,7 +1179,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
         if not (semanas_selecionadas[0] == min_semanas_disponiveis and semanas_selecionadas[1] == max_semanas_disponiveis):
 
             data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "Semanas Tabela " + semanas_selecionadas_str, nome_selecionado, email]]
-            escrever_planilha("1BFEw2OJ6wP_mULNBTHi13Rc-4LDBgscUIKiTKwVmQxU", data_to_write, "Logs | 2S25")
+            escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
 
         esferas_unicas = sorted(gamificacao_semana6['Esfera'].unique())
 
@@ -1226,7 +1190,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
 
         if esferas_selecionadas_str != '':
             data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "Esferas Tabela " + esferas_selecionadas_str, nome_selecionado, email]]
-            escrever_planilha("1BFEw2OJ6wP_mULNBTHi13Rc-4LDBgscUIKiTKwVmQxU", data_to_write, "Logs | 2S25")
+            escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
     
         if len(esferas_selecionadas) == 0:
 
