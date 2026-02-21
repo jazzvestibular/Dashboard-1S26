@@ -450,7 +450,7 @@ def tabela_pontuacoes(gamificacao, nome_selecionado):
                         vertical-align: middle;
                     }
                 </style>
-                <table style="border-collapse: collapse; margin-top: 10px; margin-bottom: -32px;">
+                <table style="border-collapse: collapse; margin-top: 10px; margin-bottom: -16px;">
                     <thead>
                         <tr style="background-color: rgba(158, 8, 158, 0.8); color: white; font-weight: bold;">
                             <th style="width: 350px; min-width: 350px; max-width: 350px; text-align: center; border-top-left-radius: 10px;border-right: 1px solid rgba(158, 8, 158, 0.8);border-left: 0px solid rgba(158, 8, 158, 0.8);border-top: 0px solid rgba(158, 8, 158, 0.8);">Aluno(a)</th>
