@@ -959,7 +959,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         elif (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online'):
 
-            simulados = ["Escolha o simulado"]# + ['Simulado 01'] + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
+            simulados = ["Escolha o simulado"] + ['Simulado Insper 01']# + ['Simulado 01'] + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
 
         elif (turma_aluno == 'Turma do Simulado Nacional'):
 
@@ -974,37 +974,42 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
             st.warning("Por favor, escolha um simulado!")
             st.stop()
 
-        if simulado_selecionado == 'Simulado Insper 01':
+        if simulado_selecionado == 'Simulado Insper 01' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 01!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 01!A1:J22000")
 
-        elif simulado_selecionado == 'Simulado Insper 02':
+        elif simulado_selecionado == 'Simulado Insper 02' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 02!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 02!A1:J22000")
 
-        elif simulado_selecionado == 'Simulado Insper 03':
+        elif simulado_selecionado == 'Simulado Insper 03' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 03!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 03!A1:J22000")
 
-        elif simulado_selecionado == 'Simulado Insper 04':
+        elif simulado_selecionado == 'Simulado Insper 04' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 04!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 04!A1:J22000")
 
-        elif simulado_selecionado == 'Simulado Insper 05':
+        elif simulado_selecionado == 'Simulado Insper 05' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05!A1:M22000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 05!A1:J22000")
 
-        elif simulado_selecionado == 'Simulado Insper 07':
+        elif simulado_selecionado == 'Simulado Insper 06' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 06!A1:M22000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 06!A1:J22000")
+
+        elif simulado_selecionado == 'Simulado Insper 07' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 07!A1:M22000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 07!A1:J22000")
 
-        elif simulado_selecionado == 'Simulado Insper 08':
+        elif simulado_selecionado == 'Simulado Insper 08' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 08!A1:M22000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 08!A1:J22000")
@@ -1014,39 +1019,50 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 06!A1:M14000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 06!A1:J4000")
 
-        elif simulado_selecionado == 'Simulado FGV 01':
+        elif simulado_selecionado == 'Simulado FGV 01' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 01!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 01!A1:J4000")
 
-        elif simulado_selecionado == 'Simulado FGV 02':
+        elif simulado_selecionado == 'Simulado FGV 02' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 02!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 02!A1:J4000")
 
-        elif simulado_selecionado == 'Simulado FGV 03':
+        elif simulado_selecionado == 'Simulado FGV 03' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 03!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 03!A1:J4000")
 
-        elif simulado_selecionado == 'Simulado FGV 04':
+        elif simulado_selecionado == 'Simulado FGV 04' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 04!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 04!A1:J4000")
+
+        elif simulado_selecionado == 'Simulado FGV 05' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05!A1:M22000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 05!A1:J4000")
+
+        elif simulado_selecionado == 'Simulado FGV 06' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 06!A1:M22000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 06!A1:J4000")
+
+        elif simulado_selecionado == 'Simulado FGV 07' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 07!A1:M22000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 07!A1:J4000")
+
+        elif simulado_selecionado == 'Simulado FGV 08' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 08!A1:M22000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 08!A1:J4000")
 
         elif simulado_selecionado == 'Simulado Nacional FGV':
 
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05!A1:M17000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 05!A1:J4000")
-
-        elif simulado_selecionado == 'Simulado FGV 06':
-
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 06!A1:M22000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 06!A1:J4000")
-
-        elif simulado_selecionado == 'Simulado Semana 01':
-
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Semana 01!A1:M4000")
 
         elif (simulado_selecionado == 'Simulado 01' and (turma == 'Esparta 2º' or turma_aluno == 'Esparta 2º')):
 
@@ -1083,40 +1099,145 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
             base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 2º 07!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 2º 07!A1:J4000")
 
-        elif (simulado_selecionado == 'Simulado 01' and (turma == 'Esparta 3º' or turma_aluno == 'Esparta 3º 1' or turma_aluno == 'Esparta 3º 2')):
+        elif (simulado_selecionado == 'Simulado Insper 01' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 3º 01!A1:M5000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 3º 01!A1:J4000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 01 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 01 (Esp 3º)!A1:J4000")
 
-        elif (simulado_selecionado == 'Simulado 02' and (turma == 'Esparta 3º' or turma_aluno == 'Esparta 3º 1' or turma_aluno == 'Esparta 3º 2')):
+        elif (simulado_selecionado == 'Simulado Insper 02' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 3º 02!A1:M5000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 3º 02!A1:J4000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 02 (Esp 3º)2!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 02 (Esp 3º)!A1:J4000")
 
-        elif (simulado_selecionado == 'Simulado 03' and (turma == 'Esparta 3º' or turma_aluno == 'Esparta 3º 1' or turma_aluno == 'Esparta 3º 2')):
+        elif (simulado_selecionado == 'Simulado Insper 03' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 3º 03!A1:M5000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 3º 03!A1:J4000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 03 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 03 (Esp 3º)!A1:J4000")
 
-        elif (simulado_selecionado == 'Simulado 04' and (turma == 'Esparta 3º' or turma_aluno == 'Esparta 3º 1' or turma_aluno == 'Esparta 3º 2')):
+        elif (simulado_selecionado == 'Simulado Insper 04' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 3º 04!A1:M5000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 3º 04!A1:J4000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 04 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 04 (Esp 3º)!A1:J4000")
 
-        elif (simulado_selecionado == 'Simulado 05' and (turma == 'Esparta 3º' or turma_aluno == 'Esparta 3º 1' or turma_aluno == 'Esparta 3º 2')):
+        elif (simulado_selecionado == 'Simulado Insper 05' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 3º 05!A1:M5000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 3º 05!A1:J4000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 05 (Esp 3º)!A1:J4000")
 
-        elif (simulado_selecionado == 'Simulado 06' and (turma == 'Esparta 3º' or turma_aluno == 'Esparta 3º 1' or turma_aluno == 'Esparta 3º 2')):
+        elif (simulado_selecionado == 'Simulado Insper 06' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 3º 06!A1:M5000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 3º 06!A1:J4000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 06 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 06 (Esp 3º)!A1:J4000")
 
-        elif (simulado_selecionado == 'Simulado 07' and (turma == 'Esparta 3º' or turma_aluno == 'Esparta 3º 1' or turma_aluno == 'Esparta 3º 2')):
+        elif (simulado_selecionado == 'Simulado Insper 07' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Esparta 3º 07!A1:M5000")
-            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Esparta 3º 07!A1:J4000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 07 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 07 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 01' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 01 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 01 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 02' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 02 (Esp 3º)2!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 02 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 03' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 03 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 03 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 04' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 04 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 04 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 05' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 05 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 06' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 06 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 06 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 07' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 07 (Esp 3º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 07 (Esp 3º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado Insper 01' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 01 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 01 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado Insper 02' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 02 (Esp 2º)2!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 02 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado Insper 03' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 03 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 03 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado Insper 04' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 04 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 04 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado Insper 05' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 05 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado Insper 06' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 06 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 06 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado Insper 07' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 07 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 07 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 01' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 01 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 01 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 02' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 02 (Esp 2º)2!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 02 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 03' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 03 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 03 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 04' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 04 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 04 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 05' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 05 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 06' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 06 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 06 (Esp 2º)!A1:J4000")
+
+        elif (simulado_selecionado == 'Simulado FGV 07' and (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online')):
+
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 07 (Esp 2º)!A1:M5000")
+            base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 07 (Esp 2º)!A1:J4000")
 
     else:
 
