@@ -37,7 +37,7 @@ def mostrar_alunos(nome, permissao, email, turma):
                     if (elements[i].innerText == '{widget_label}') {{ 
                         elements[i].style.color ='{font_color}';
                         elements[i].style.background = '{background_color}';
-                        elements[i].style.width = '360px';  // Adiciona a largura desejada
+                        elements[i].style.width = '500px';  // Adiciona a largura desejada
                         elements[i].style.height = '50px';  // Adiciona a altura desejada
                     }}
                 }}
