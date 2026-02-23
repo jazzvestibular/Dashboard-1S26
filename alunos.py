@@ -89,20 +89,20 @@ def mostrar_alunos(nome, permissao, email, turma):
 
     elif (permissao == 'Aluno' or permissao == 'Mentor' or permissao == 'Responsável'):
 
-        #with st.container():
-        #        col1, col2 = st.columns([1,1])
-        #        with col1:
-        #            botao_clicado12 = col1.button('Gamificação', key='b12')
-        #            ChangeButtonColour('Gamificação', 'white', '#ff80e6')
-        #        with col2:
-        #            botao_clicado13 = col2.button('Resultado nos simulados', key='b13')
-        #            ChangeButtonColour('Resultado nos simulados', 'white', '#ff80e6')
-
         with st.container():
-                col2, col3, col4, col5 = st.columns([1,1,1,1])
+                col1, col2 = st.columns([1,1])
+                with col1:
+                    botao_clicado12 = col1.button('Gamificação', key='b12')
+                    ChangeButtonColour('Gamificação', 'white', '#ff80e6')
                 with col2:
                     botao_clicado13 = col2.button('Resultado nos simulados', key='b13')
                     ChangeButtonColour('Resultado nos simulados', 'white', '#ff80e6')
+
+        #with st.container():
+        #        col2, col3, col4, col5 = st.columns([1,1,1,1])
+        #        with col2:
+        #            botao_clicado13 = col2.button('Resultado nos simulados', key='b13')
+        #            ChangeButtonColour('Resultado nos simulados', 'white', '#ff80e6')
 
         st.markdown(
         """
@@ -111,36 +111,36 @@ def mostrar_alunos(nome, permissao, email, turma):
         unsafe_allow_html=True
         )
 
-        #botoes_menu = [botao_clicado12, botao_clicado13]
-        botoes_menu = [botao_clicado13]
+        botoes_menu = [botao_clicado12, botao_clicado13]
+        #botoes_menu = [botao_clicado13]
 
-        estado['pagina_atual'] = 'Alunos - Resultados nos simulados'
-        data_hoje_brasilia, hora_atual_brasilia = dia_hora()
-        data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
-        escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
-        mostrar_resultados_simulados(nome, permissao, email, turma)
+        #estado['pagina_atual'] = 'Alunos - Resultados nos simulados'
+        #data_hoje_brasilia, hora_atual_brasilia = dia_hora()
+        #data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
+        #escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
+        #mostrar_resultados_simulados(nome, permissao, email, turma)
 
-        #if all(not botao for botao in botoes_menu) and estado['pagina_atual'] != 'Alunos - Resultados nos simulados' and estado['pagina_atual'] != 'Alunos - Presença nas aulas':
-        #    
-        #    estado['pagina_atual'] = 'Alunos - Gamificação'
-        #    data_hoje_brasilia, hora_atual_brasilia = dia_hora()
-        #    data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
-        #    escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
-        #    mostrar_gamificacao(nome, permissao, email, turma)
+        if all(not botao for botao in botoes_menu) and estado['pagina_atual'] != 'Alunos - Resultados nos simulados' and estado['pagina_atual'] != 'Alunos - Presença nas aulas':
+            
+            estado['pagina_atual'] = 'Alunos - Gamificação'
+            data_hoje_brasilia, hora_atual_brasilia = dia_hora()
+            data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
+            escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
+            mostrar_gamificacao(nome, permissao, email, turma)
 
-        #elif botao_clicado12:
-        #    estado['pagina_atual'] = 'Alunos - Gamificação'
-        #    data_hoje_brasilia, hora_atual_brasilia = dia_hora()
-        #    data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
-        #    escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
-        #    mostrar_gamificacao(nome, permissao, email, turma)
+        elif botao_clicado12:
+            estado['pagina_atual'] = 'Alunos - Gamificação'
+            data_hoje_brasilia, hora_atual_brasilia = dia_hora()
+            data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
+            escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
+            mostrar_gamificacao(nome, permissao, email, turma)
 
-        #elif botao_clicado13 or estado['pagina_atual'] == 'Alunos - Resultados nos simulados':
-        #    estado['pagina_atual'] = 'Alunos - Resultados nos simulados'
-        #    data_hoje_brasilia, hora_atual_brasilia = dia_hora()
-        #    data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
-        #    escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
-        #    mostrar_resultados_simulados(nome, permissao, email, turma)
+        elif botao_clicado13 or estado['pagina_atual'] == 'Alunos - Resultados nos simulados':
+            estado['pagina_atual'] = 'Alunos - Resultados nos simulados'
+            data_hoje_brasilia, hora_atual_brasilia = dia_hora()
+            data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", "", email]]
+            escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
+            mostrar_resultados_simulados(nome, permissao, email, turma)
 
     elif permissao == 'Inscrito Simulado Nacional':
 
