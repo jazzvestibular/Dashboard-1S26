@@ -826,7 +826,7 @@ def mostrar_gamificacao(nome, permissao, email, turma):
 
             escrever_planilha_pontos("1o8qG4r9tvFnXTzKIxDt6EVxDEPQQLJdkldYtm5jOChE", data_to_write, "Pontuação Semiextensivo")
 
-        if turmas == 'Esparta':
+        if (turmas == 'Esparta' or turmas == 'Esparta 2º' or turmas == 'Esparta 3º'):
 
             escrever_planilha_pontos("1o8qG4r9tvFnXTzKIxDt6EVxDEPQQLJdkldYtm5jOChE", data_to_write, "Pontuação Esparta")
 
