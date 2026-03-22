@@ -1142,7 +1142,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         elif (simulado_selecionado == 'Simulado FGV 02' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 02 (Esp 3)2!A1:M5000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 02 (Esp 3)!A1:M5000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 02 (Esp 3)!A1:J4000")
 
         elif (simulado_selecionado == 'Simulado FGV 03' and (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online')):
