@@ -972,8 +972,8 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
     data_to_write = [[nome, permissao, data_hoje_brasilia, hora_atual_brasilia, get_estado()['pagina_atual'], "", nome_selecionado, email]]
     escrever_planilha("17KVukpAvTZmYEh2fbbeqIrJjDSww1KJe8JWKUmHOv9k", data_to_write, "Logs | 26")
 
-    progress_bar.progress(50)
-    percentage_text.text("50%")
+    progress_bar.progress(60)
+    percentage_text.text("60%")
 
     if permissao != 'Inscrito Simulado Nacional':
 
@@ -1024,7 +1024,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         elif simulado_selecionado == 'Simulado Insper 05' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05!A1:M50000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05!A1:M60000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 05!A1:J22000")
 
         elif simulado_selecionado == 'Simulado Insper 06' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
@@ -1044,7 +1044,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         elif simulado_selecionado == 'Simulado Nacional Insper':
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05!A1:M50000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05!A1:M60000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 05!A1:J4000")
 
         elif simulado_selecionado == 'Simulado FGV 01' and (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
@@ -1286,7 +1286,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
             simulado_selecionado = 'Simulado Nacional Insper'
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05!A1:M50000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | Insper 05!A1:M60000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | Insper 05!A1:J22000")  
 
         else:
@@ -1363,8 +1363,8 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         resultados_gerais = base.groupby(['Nome da avaliação','Turma','Nome do aluno(a)','Login do aluno(a)','Simulado','Estratégia','Turma Jazz']).sum().reset_index()
 
-        progress_bar.progress(0.6)
-        percentage_text.text("60%")
+        progress_bar.progress(0.7)
+        percentage_text.text("70%")
 
         resultados_gerais2 = resultados_gerais.groupby(['Turma','Nome do aluno(a)','Login do aluno(a)','Simulado','Estratégia','Turma Jazz']).sum().reset_index()
 
