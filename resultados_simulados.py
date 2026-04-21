@@ -979,19 +979,19 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         if (turma == 'Semiextensivo Presencial' or turma == 'Semiextensivo Online' or turma_aluno == 'Semiextensivo Presencial' or turma_aluno == 'Semiextensivo Online'):
 
-            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01'] + ['Simulado Insper 02'] + ['Simulado FGV 02'] + ['Simulado Insper 03'] + ['Simulado FGV 03'] + ['Simulado Insper 04'] + ['Simulado FGV 04'] + ['Simulado Nacional Insper']# + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado Insper 07'] + ['Simulado FGV 06'] + ['Simulado Insper 08'] #+ ['Simulado FGV 01'] + ['Simulado FGV 02'] + ['Simulado FGV 03'] + ['Simulado FGV 04'] + ['Simulado FGV 05'] + ['Simulado FGV 06']
+            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01'] + ['Simulado Insper 02'] + ['Simulado FGV 02'] + ['Simulado Insper 03'] + ['Simulado FGV 03'] + ['Simulado Insper 04'] + ['Simulado FGV 04'] + ['Simulado Nacional Insper']+ ['Simulado Nacional FGV']# + ['Simulado Insper 07'] + ['Simulado FGV 06'] + ['Simulado Insper 08'] #+ ['Simulado FGV 01'] + ['Simulado FGV 02'] + ['Simulado FGV 03'] + ['Simulado FGV 04'] + ['Simulado FGV 05'] + ['Simulado FGV 06']
 
         elif (turma == 'Esparta 2º Online' or turma_aluno == 'Esparta 2º Online'):
 
-            simulados = ["Escolha o simulado"]# + ['Simulado 01'] + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
+            simulados = ["Escolha o simulado"] + ['Simulado Nacional Insper']+ ['Simulado Nacional FGV']# + ['Simulado 01'] + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
 
         elif (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online'):
 
-            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01'] + ['Simulado Insper 02'] + ['Simulado FGV 02'] + ['Simulado Nacional Insper']# + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
+            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01'] + ['Simulado Insper 02'] + ['Simulado FGV 02'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV']# + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
 
         elif (turma_aluno == 'Turma do Simulado Nacional'):
 
-            simulados = ["Simulado Nacional Insper"]#["Escolha o simulado"] + ["Simulado Nacional Insper"]# + ['Simulado Nacional FGV']
+            simulados = ["Escolha o simulado"] + ["Simulado Nacional Insper"] + ['Simulado Nacional FGV']
 
         simulado_selecionado = st.selectbox('Selecione o simulado:', simulados)
 
@@ -1089,7 +1089,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         elif simulado_selecionado == 'Simulado Nacional FGV':
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05!A1:M17000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05!A1:M60000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 05!A1:J4000")
 
         elif (simulado_selecionado == 'Simulado 01' and (turma == 'Esparta 2º' or turma_aluno == 'Esparta 2º')):
@@ -1270,7 +1270,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
     else:
 
-        simulados = ['Simulado Nacional Insper']#["Escolha o simulado"] + ['Simulado Nacional Insper']# + ['Simulado Nacional FGV']
+        simulados = ["Escolha o simulado"] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV']
 
         simulado_selecionado2 = st.selectbox('Selecione o simulado:', simulados)
 
@@ -1278,7 +1278,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
             simulado_selecionado = 'Simulado Nacional FGV'
 
-            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05!A1:M22000")
+            base_resultados = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "RelSimulado | FGV 05!A1:M60000")
             base_redacao = ler_planilha("17hHuwvyR6u3bVslQy18uN-jmIXd0avF6ih89A-OOqk4", "Red | FGV 05!A1:J22000")
             
 
