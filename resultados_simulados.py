@@ -997,6 +997,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         if simulado_selecionado == 'Escolha o simulado':
 
+            progress_bar.progress(0.00)
             progress_bar.progress(1.00)
             percentage_text.text("100%")
             st.warning("Por favor, escolha um simulado!")
