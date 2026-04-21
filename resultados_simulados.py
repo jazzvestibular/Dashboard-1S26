@@ -997,8 +997,8 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         if simulado_selecionado == 'Escolha o simulado':
 
-            progress_bar.progress(0.00)
-            progress_bar.progress(1.00)
+            #progress_bar.progress(0.00)
+            #progress_bar.progress(1.00)
             percentage_text.text("100%")
             st.warning("Por favor, escolha um simulado!")
             st.stop()
@@ -2630,15 +2630,15 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
             if permissao == 'Aluno':
 
-                st.warning("🚨 **Atenção!** 🚨\n\nVocê ainda não realizou esse simulado de 1ª fase ainda! Caso já tenha sido feito há mais de 24h, entre em contato com Padre!")
+                st.warning("🚨 **Atenção!** 🚨\n\nVocê ainda não realizou esse simulado ainda! Caso já tenha sido feito há mais de 24h, entre em contato com Padre!")
 
             elif (permissao == 'Mentor' or permissao == 'Administrador'):
 
-                st.warning("🚨 **Atenção!** 🚨\n\nO(A) aluno(a) ainda não realizou esse simulado de 1ª fase!")   
+                st.warning("🚨 **Atenção!** 🚨\n\nO(A) aluno(a) ainda não realizou esse simulado!")   
 
             else:
 
-                st.warning("🚨 **Atenção!** 🚨\n\nEnvie uma mensagem para Alexandre para você poder fazer o simulado de 1ª fase Insper!")                                
+                st.warning("🚨 **Atenção!** 🚨\n\nEnvie uma mensagem para Alexandre para você poder fazer o Simulado Insper!")                                
 
 
             
