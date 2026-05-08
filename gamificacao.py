@@ -202,7 +202,7 @@ def definir_nivel(pontuacao, pont_nivel12, pont_nivel23, pont_nivel34, pont_nive
         #return "Nível 4"
         #return "4ª | Confrontation"
         return "4ª | Resilience"
-    elif pontuacao < pont_nivel56:
+    else:
         #return "Nível 5"
         #return "5ª | Resilience"
         return "5ª | Final Battle"
