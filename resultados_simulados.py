@@ -987,7 +987,7 @@ def mostrar_resultados_simulados(nome, permissao, email, turma):
 
         elif (turma == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online' or turma_aluno == 'Esparta 3º Online'):
 
-            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01'] + ['Simulado Insper 02'] + ['Simulado FGV 02'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] +['Simulado Insper 04'] + ['Simulado FGV 04']# + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
+            simulados = ["Escolha o simulado"] + ['Simulado Insper 01'] + ['Simulado FGV 01'] + ['Simulado Insper 02'] + ['Simulado FGV 02'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] +['Simulado Insper 04'] + ['Simulado FGV 04'] + ['Simulado FGV 05']# + ['Simulado 02'] + ['Simulado 03'] + ['Simulado 04'] + ['Simulado Nacional Insper'] + ['Simulado Nacional FGV'] + ['Simulado 05'] + ['Simulado 06'] + ['Simulado 07']
 
         elif (turma_aluno == 'Turma do Simulado Nacional'):
 
